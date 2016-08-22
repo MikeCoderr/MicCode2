@@ -1,0 +1,12 @@
+D:\MicApp\MicApp\MicApp\bin\Release\MicApp.exe.config
+D:\MicApp\MicApp\MicApp\bin\Release\MicApp.exe
+D:\MicApp\MicApp\MicApp\bin\Release\MicApp.pdb
+D:\MicApp\MicApp\MicApp\bin\Release\WebDriver.dll
+D:\MicApp\MicApp\MicApp\bin\Release\WebDriver.Support.dll
+D:\MicApp\MicApp\MicApp\bin\Release\WebDriver.xml
+D:\MicApp\MicApp\MicApp\bin\Release\WebDriver.Support.xml
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.Form1.resources
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.Properties.Resources.resources
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.csproj.GenerateResource.Cache
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.exe
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.pdb
