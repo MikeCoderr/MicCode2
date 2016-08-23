@@ -10,3 +10,4 @@ D:\MicApp\MicApp\MicApp\obj\Release\MicApp.Properties.Resources.resources
 D:\MicApp\MicApp\MicApp\obj\Release\MicApp.csproj.GenerateResource.Cache
 D:\MicApp\MicApp\MicApp\obj\Release\MicApp.exe
 D:\MicApp\MicApp\MicApp\obj\Release\MicApp.pdb
+D:\MicApp\MicApp\MicApp\obj\Release\MicApp.csprojResolveAssemblyReference.cache
