@@ -54,14 +54,15 @@ namespace MicApp
                 {
                     createDriver(); // Common funtion for driver
                     loginFuntion(); // Common funtion for login
+                    createTemplate();
                 }
-                if (isSessionExpire())
+                else if (isSessionExpire())
                 {
                     loginFuntion(); // Common funtion for login
+                    createTemplate();
                 }
                 else
                 {
-                    gotoHomePage();
                     createTemplate();
                 }
             }
@@ -94,7 +95,6 @@ namespace MicApp
             runFunding();
 
         }
-
 
         //Template creation funtion
         public static void createTemplate()
@@ -221,7 +221,6 @@ namespace MicApp
                 //expand stock
                 Thread.Sleep(2000);
                 wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("pspan_STK")))).Click();
-
                 Thread.Sleep(2000);
                 //enter data
                 driver.FindElement(By.Name("USD/STK_TICKET_CHARGE")).SendKeys("1");
@@ -266,13 +265,15 @@ namespace MicApp
         //Creating funding called by Funding main funtion
         public static void createFunding()
         {
+            
             driver.SwitchTo().DefaultContent();
             Thread.Sleep(1000);
             driver.SwitchTo().Frame(0);
             Thread.Sleep(1000);
-            wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//html/body//div/ul//li[@id='funding']")))).Click();
+            wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("funding")))).Click();
             Thread.Sleep(10000);
-            wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.XPath("//html/body//div/ul/li[@id='fundTrans']")))).Click();
+            element = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("fundTrans"))));
+            element.FindElements(By.TagName("a"))[0].Click();
             Thread.Sleep(10000);
             driver.SwitchTo().DefaultContent();
             Thread.Sleep(1000);
@@ -283,7 +284,8 @@ namespace MicApp
             SelectElement accNum = new SelectElement(driver.FindElement(By.Id("fromAcct")));
             accNum.SelectByText("I1641010");
             Thread.Sleep(10000);
-            driver.FindElement(By.XPath("//*[@id='mainscreen']//table/tbody//tr[@id='amountRow']//td/input")).SendKeys("0.01");
+            element = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("amountRow"))));
+            element.FindElements(By.TagName("input"))[0].SendKeys("0.01");
             Thread.Sleep(10000);
             SelectElement currency = new SelectElement(driver.FindElement(By.Id("currency")));
             currency.SelectByText("RUB");
@@ -291,6 +293,7 @@ namespace MicApp
             SelectElement destAccNum = new SelectElement(driver.FindElement(By.Id("currency")));
             currency.SelectByText("F1845979");
             Thread.Sleep(10000);
+
 
         }
 
