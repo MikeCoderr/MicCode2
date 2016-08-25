@@ -38,8 +38,7 @@ namespace MicApp
         {
             InitializeComponent();
         }
-
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -73,8 +72,7 @@ namespace MicApp
                 MessageBox.Show("There was some error." + ex);
             }
         }
-
-
+       
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -91,6 +89,7 @@ namespace MicApp
                 driver.Quit();
             }
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -288,7 +287,6 @@ namespace MicApp
                 Thread.Sleep(1000);
                 driver.SwitchTo().Frame(0);
                 Thread.Sleep(2000);
-
                 a.MoveToElement(wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("funding"))))).Perform();
                 Thread.Sleep(2000);
                 element = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("fundTrans"))));
@@ -316,7 +314,8 @@ namespace MicApp
                 SelectElement destAccNum = new SelectElement(driver.FindElement(By.Id("to_acct_id")));
                 destAccNum.SelectByText("F1845979");
                 Thread.Sleep(10000);
-          
+                element = wait.Until(ExpectedConditions.ElementToBeClickable(driver.FindElement(By.Id("xyzNonButton"))));
+                element.Click(); 
 
             }
             catch (Exception ex)
